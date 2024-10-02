@@ -19,26 +19,42 @@
     "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "drizzle:generate": "drizzle-kit generate:sqlite",
+    "drizzle:migrate": "drizzle-kit push:sqlite",
+    "drizzle:studio": "drizzle-kit studio --host 127.0.0.1",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
+    "postinstall": "drizzle-kit generate:sqlite",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
     "qwik": "qwik"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.9.0",
-    "@builder.io/qwik-city": "^1.9.0",
+    "@builder.io/qwik-city": "latest",
+    "@types/better-sqlite3": "^7.6.9",
     "@types/eslint": "8.56.10",
     "@types/node": "20.14.11",
     "@typescript-eslint/eslint-plugin": "7.16.1",
     "@typescript-eslint/parser": "7.16.1",
+    "autoprefixer": "^10.4.19",
+    "drizzle-kit": "^0.20.14",
     "eslint": "8.57.0",
     "eslint-plugin-qwik": "^1.9.0",
+    "postcss": "^8.4.39",
     "prettier": "3.3.3",
+    "prettier-plugin-tailwindcss": "^0.5.4",
+    "tailwindcss": "^3.4.6",
     "typescript": "5.4.5",
     "undici": "*",
     "vite": "5.3.5",
     "vite-tsconfig-paths": "^4.2.1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^9.0.3",
+    "@libsql/client": "latest",
+    "better-sqlite3": "^9.4.3",
+    "drizzle-orm": "^0.29.4"
   }
 }
